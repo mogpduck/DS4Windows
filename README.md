@@ -1,5 +1,7 @@
 # DS4Windows
 
+THIS FORK UPDATES PROJECT DEPENDENCIES TO ENSURE THE TOOL IS FUNCTIONAL AND OPTIMIZED FOR USE ON .NET 8/WINDOWS 11. All base functionality remains intact. 
+
 Like those other DS4 tools, but sexier.
 
 DS4Windows is an extract anywhere program that allows you to get the best
