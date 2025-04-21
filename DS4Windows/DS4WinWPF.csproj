@@ -56,6 +56,16 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
+    <!-- Define USE_FAKER_INPUT when FakerInputWrapper.dll exists -->
+  <PropertyGroup Condition="Exists('..\libs\$(Platform)\FakerInputWrapper\FakerInputWrapper.dll')">
+    <DefineConstants>$(DefineConstants);USE_FAKER_INPUT</DefineConstants>
+  </PropertyGroup>
+
+  <!-- Define USE_SHARPOSC when SharpOSC.dll exists -->
+  <PropertyGroup Condition="Exists('..\libs\$(Platform)\SharpOSC\SharpOSC.dll')">
+    <DefineConstants>$(DefineConstants);USE_SHARPOSC</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="libs\x64\**" Condition="'$(Platform)' != 'x64'" />
     <None Remove="libs\x86\**" Condition="'$(Platform)' != 'x86'" />
