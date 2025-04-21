@@ -16,6 +16,31 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+--- FakerInputMapping.cs
++++ FakerInputMapping.cs
+@@ top of file
+- using FakerInputWrapper;
++ #if USE_FAKER_INPUT
++ using FakerInputWrapper;
++ #endif
+
+ namespace DS4Control.OutputKBM
+ {
+     public static class FakerInputMapping
+     {
+         public static KeyboardModifier ToModifier(DS4Modifier mod)
+         {
++            #if USE_FAKER_INPUT
+             // your existing mapping logic…
++            #else
++            throw new InvalidOperationException("FakerInput not available.");
++            #endif
+         }
+
+         // …and similarly for all mappings that use FakerInputWrapper types…
+     }
+ }
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;

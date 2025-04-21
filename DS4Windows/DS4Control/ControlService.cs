@@ -16,6 +16,41 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+--- ControlService.cs
++++ ControlService.cs
+- using SharpOSC;
++ #if USE_SHARPOSC
++ using SharpOSC;
++ #endif
+
+ namespace DS4Control
+ {
+     public class ControlService
+     {
++        #if USE_SHARPOSC
+         private UDPListener _listener;
+         private UDPSender   _sender;
++        #endif
+
+         public ControlService(int portIn, int portOut)
+         {
++            #if USE_SHARPOSC
+             _listener = new UDPListener(portIn);
+             _listener.MessageReceived += HandleOscPacket;
+             _sender   = new UDPSender("127.0.0.1", portOut);
++            #endif
+         }
+
+         private void HandleOscPacket(OscPacket packet)
+         {
++            #if USE_SHARPOSC
+             // your existing packet‑handling logic…
++            #endif
+         }
+     }
+ }
+
+
 using System;
 using System.Collections.Generic;
 using System.IO;

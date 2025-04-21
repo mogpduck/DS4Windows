@@ -16,6 +16,41 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+--- FakerInputHandler.cs
++++ FakerInputHandler.cs
+@@ top of file
+- using FakerInputWrapper;
++ #if USE_FAKER_INPUT
++ using FakerInputWrapper;
++ #endif
+
+ namespace DS4Control.OutputKBM
+ {
+     public class FakerInputHandler
+     {
++        #if USE_FAKER_INPUT
+         private FakerInput _input;
++        #endif
+
+         public FakerInputHandler()
+         {
++            #if USE_FAKER_INPUT
+             _input = new FakerInput();
++            #endif
+         }
+
+         public void Send(//…)
+         {
++            #if USE_FAKER_INPUT
+             var mouseReport = new RelativeMouseReport(…);
+             _input.Send(mouseReport);
+             var keyReport   = new KeyboardReport(…);
+             _input.Send(keyReport);
++            #endif
+         }
+     }
+ }
+
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
