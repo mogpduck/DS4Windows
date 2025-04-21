@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>x64;x86</Platforms>
     <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
@@ -84,12 +84,18 @@
     <PackageReference Include="WPFLocalizeExtension" Version="3.10.0" />
     <PackageReference Include="WpfScreenHelper" Version="2.1.1" />
     
-    <Reference Include="FakerInputWrapper">
-      <HintPath>..\libs\$(Platform)\FakerInputWrapper\FakerInputWrapper.dll</HintPath>
+<!-- Conditionally include FakerInputWrapper if present -->
+    <Reference Include="FakerInputWrapper"
+           Condition="Exists('..\libs\$(Platform)\FakerInputWrapper\FakerInputWrapper.dll')">
+  <HintPath>..\libs\$(Platform)\FakerInputWrapper\FakerInputWrapper.dll</HintPath>
+  <Private>True</Private>
     </Reference>
 
-    <Reference Include="SharpOSC">
-      <HintPath>..\libs\$(Platform)\SharpOSC\SharpOSC.dll</HintPath>
+<!-- Conditionally include SharpOSC if present -->
+    <Reference Include="SharpOSC"
+           Condition="Exists('..\libs\$(Platform)\SharpOSC\SharpOSC.dll')">
+  <HintPath>..\libs\$(Platform)\SharpOSC\SharpOSC.dll</HintPath>
+  <Private>True</Private>
     </Reference>
 
     <Reference Include="Nefarius.ViGEm.Client">

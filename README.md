@@ -1,6 +1,6 @@
 # DS4Windows
 
-THIS FORK UPDATES PROJECT DEPENDENCIES TO ENSURE THE TOOL IS FUNCTIONAL AND OPTIMIZED FOR USE ON .NET 8/WINDOWS 11. All base functionality remains intact. 
+THIS FORK UPDATES PROJECT DEPENDENCIES TO ENSURE THE TOOL IS FUNCTIONAL AND OPTIMIZED FOR USE ON .NET 9/WINDOWS 11. All base functionality remains intact. 
 
 Like those other DS4 tools, but sexier.
 
@@ -20,14 +20,10 @@ You can find a copy of the terms and conditions of that license at
 [https://www.gnu.org/licenses/gpl-3.0.txt](https://www.gnu.org/licenses/gpl-3.0.txt). The license is also
 available in this source code from the COPYING file.
 
-## Downloads
-
-- **[Main builds of DS4Windows](https://github.com/Ryochan7/DS4Windows/releases)**
-
 ## Requirements
 
 - Windows 10 or newer (Thanks Microsoft)
-- Microsoft .NET 8.0 Desktop Runtime. [x64](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.0-windows-x64-installer) or [x86](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.0-windows-x86-installer)
+- Microsoft .NET 9.0 Desktop Runtime. [x64](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-9.0.4-windows-x64-installer) or [x86](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-9.0.4-windows-x86-installer)
 - Visual C++ 2015-2022 Redistributable. [x64](https://aka.ms/vs/17/release/vc_redist.x64.exe) or [x86](https://aka.ms/vs/17/release/vc_redist.x86.exe)
 - [ViGEmBus](https://vigem.org/) driver (DS4Windows will install it for you)
 - **Sony** DualShock 4 or other supported controller
